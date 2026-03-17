@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vspa Kenya | Smooth Skin. Confident You.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:      #E8005A;
+    --pink-hot:  #FF0066;
+    --pink-soft: #FFE4EF;
+    --pink-mid:  #FFAAD0;
+    --black:     #0D0D0D;
+    --off-white: #FDF9F8;
+    --white:     #FFFFFF;
+    --muted:     #999;
+    --light-gray:#F5F2F0;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--off-white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 68px;
+    background: var(--white);
+    border-bottom: 1px solid rgba(232,0,90,0.15);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+  }
+
+  /* SVG logo mark */
+  .logo-v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--pink);
+    line-height: 1;
+  }
+
+  .logo-spa {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-left: 2px;
+    align-self: flex-end;
+    margin-bottom: 4px;
+  }
+
+  .logo-divider {
+    width: 1px;
+    height: 22px;
+    background: rgba(232,0,90,0.3);
+    margin: 0 10px;
+    align-self: center;
+  }
+
+  .logo-tagline {
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--pink); }
+
+  .nav-book {
+    background: var(--pink) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.6rem;
+    letter-spacing: 0.15em !important;
+  }
+
+  .nav-book:hover { background: var(--pink-hot) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    margin-top: 68px;
+    min-height: calc(100vh - 68px);
+    display: grid;
+    grid-template-columns: 55% 45%;
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 5rem 5rem 5rem;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow-dot {
+    width: 8px; height: 8px;
+    background: var(--pink);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--pink);
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6.5rem;
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-h1 .bold {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--pink);
+    display: block;
+  }
+
+  .hero-h1 .outline {
+    -webkit-text-stroke: 1.5px var(--black);
+    color: transparent;
+    font-style: normal;
+  }
+
+  .hero-desc {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.9;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-filled {
+    background: var(--pink);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-filled:hover { background: var(--pink-hot); transform: translateY(-1px); }
+
+  .hero-scroll {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--light-gray);
+  }
+
+  .stat { }
+
+  .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--pink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-l {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 0.25rem;
+  }
+
+  /* Hero right — split image layout */
+  .hero-right {
+    display: grid;
+    grid-template-rows: 60% 40%;
+    gap: 3px;
+    background: var(--light-gray);
+  }
+
+  .hero-img-a {
+    background: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=85') center/cover;
+    position: relative;
+  }
+
+  .hero-img-a::after {
+    content: '#SMOOTH';
+    position: absolute;
+    bottom: 1.5rem; right: 1.5rem;
+    background: var(--pink);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .hero-img-b {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .hero-img-b1 {
+    background: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80') center/cover;
+  }
+
+  .hero-img-b2 {
+    background: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .hero-img-b2 .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .hero-img-b2 .small {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee-wrap {
+    overflow: hidden;
+    background: var(--black);
+    padding: 0.9rem 0;
+    white-space: nowrap;
+  }
+
+  .marquee-track {
+    display: inline-block;
+    animation: run 22s linear infinite;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .marquee-track .sep { color: var(--pink); margin: 0 1.5rem; }
+
+  @keyframes run {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ===== SERVICES ===== */
+  .services { padding: 8rem 5rem; background: var(--off-white); }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 5rem;
+  }
+
+  .sec-kicker {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .sec-kicker::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background: var(--pink);
+  }
+
+  .sec-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+
+  .sec-h2 em { font-style: italic; color: var(--pink); }
+
+  .sec-body {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.9;
+    max-width: 400px;
+  }
+
+  .sec-body + * { margin-top: 2rem; }
+
+  /* Services bento grid */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    gap: 3px;
+  }
+
+  .svc {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+    cursor: default;
+  }
+
+  .svc:hover { background: var(--pink); }
+  .svc:hover .svc-n,
+  .svc:hover .svc-title,
+  .svc:hover .svc-desc { color: var(--white); }
+  .svc:hover .svc-line { background: rgba(255,255,255,0.3); }
+
+  /* span widths */
+  .svc.wide  { grid-column: span 2; }
+  .svc.wider { grid-column: span 3; }
+
+  .svc-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(232,0,90,0.1);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.25s;
+  }
+
+  .svc-emoji { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+
+  .svc-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    transition: color 0.25s;
+  }
+
+  .svc-line {
+    width: 2rem;
+    height: 2px;
+    background: var(--pink);
+    margin-bottom: 0.8rem;
+    transition: background 0.25s;
+  }
+
+  .svc-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.8;
+    transition: color 0.25s;
+  }
+
+  /* ===== ABOUT STRIP ===== */
+  .about-strip {
+    background: var(--pink);
+    padding: 6rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .about-quote span { font-weight: 600; font-style: normal; }
+
+  .about-right { color: var(--white); }
+
+  .about-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .about-label::before {
+    content: '';
+    width: 1.5rem; height: 2px;
+    background: rgba(255,255,255,0.5);
+    display: block;
+  }
+
+  .about-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+  }
+
+  .about-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 1.2rem;
+  }
+
+  .pillar-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ===== LOCATIONS ===== */
+  .locations { padding: 8rem 5rem; background: var(--white); }
+
+  .loc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin-top: 4rem;
+  }
+
+  .loc {
+    position: relative;
+    overflow: hidden;
+    background: var(--light-gray);
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem 2rem;
+    cursor: default;
+    transition: background 0.3s;
+  }
+
+  .loc::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--pink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.77,0,0.175,1);
+    z-index: 0;
+  }
+
+  .loc:hover::before { transform: scaleX(1); }
+  .loc:hover .loc-city,
+  .loc:hover .loc-addr,
+  .loc:hover .loc-tel,
+  .loc:hover .loc-tag { color: var(--white) !important; border-color: rgba(255,255,255,0.3) !important; }
+
+  .loc-num {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: rgba(0,0,0,0.06);
+    line-height: 1;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+
+  .loc:hover .loc-num { color: rgba(255,255,255,0.1); }
+
+  .loc-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .loc-city {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+
+  .loc-addr {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+
+  .loc-tel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--pink);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+
+  /* ===== BOOKING ===== */
+  .booking {
+    background: var(--black);
+    padding: 8rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: start;
+  }
+
+  .booking .sec-kicker { color: var(--pink-mid); }
+  .booking .sec-kicker::before { background: var(--pink-mid); }
+  .booking .sec-h2 { color: var(--white); }
+  .booking .sec-h2 em { color: var(--pink-mid); }
+  .booking .sec-body { color: rgba(255,255,255,0.4); }
+
+  .contact-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+
+  .c-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+
+  .c-icon-box {
+    width: 42px; height: 42px;
+    border: 1px solid rgba(232,0,90,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .c-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pink-mid);
+    margin-bottom: 0.2rem;
+  }
+
+  .c-value {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .c-value a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .c-value a:hover { color: var(--pink-mid); }
+
+  .socials { display: flex; gap: 0.75rem; margin-top: 2.5rem; }
+
+  .soc-box {
+    width: 42px; height: 42px;
+    border: 1px solid rgba(232,0,90,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--pink-mid);
+    transition: all 0.2s;
+  }
+
+  .soc-box:hover { background: var(--pink); border-color: var(--pink); color: var(--white); }
+
+  /* Form */
+  .f-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .f-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  .f-input, .f-select, .f-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.9rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .f-input::placeholder, .f-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .f-input:focus, .f-select:focus, .f-textarea:focus { border-color: var(--pink); }
+  .f-select option { background: #1a1a1a; }
+  .f-textarea { resize: vertical; min-height: 100px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #080808;
+    padding: 5rem 5rem 2.5rem;
+    border-top: 1px solid rgba(232,0,90,0.15);
+  }
+
+  .f-top {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 2rem;
+  }
+
+  .f-brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+
+  .f-v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--pink);
+    line-height: 1;
+  }
+
+  .f-spa-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-left: 2px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+  }
+
+  .f-motto {
+    font-size: 0.75rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 0.8rem;
+  }
+
+  .f-desc-text {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.8;
+    max-width: 240px;
+  }
+
+  .f-col-head {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 1.2rem;
+  }
+
+  .f-col-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+  .f-col-links a {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .f-col-links a:hover { color: var(--pink-mid); }
+
+  .f-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(20px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .hero-left > * { opacity:0; animation: fadeUp 0.7s ease forwards; }
+  .hero-eyebrow { animation-delay: 0.05s; }
+  .hero-h1      { animation-delay: 0.2s; }
+  .hero-desc    { animation-delay: 0.35s; }
+  .hero-actions { animation-delay: 0.5s; }
+  .hero-stats   { animation-delay: 0.65s; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 2rem; }
+    .hero-h1 { font-size: 4rem; }
+    .hero-right { height: 300px; grid-template-rows: 1fr; }
+    .hero-img-b { display: none; }
+    .services, .locations, .booking { padding: 5rem 2rem; }
+    .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .svc-grid { grid-template-columns: 1fr 1fr; }
+    .svc.wide, .svc.wider { grid-column: span 2; }
+    .about-strip { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+    .about-quote { font-size: 2rem; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .booking { grid-template-columns: 1fr; gap: 3rem; }
+    .f-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-pillars { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-v">V</span>
+    <span class="logo-spa">SPA</span>
+    <span class="logo-divider"></span>
+    <span class="logo-tagline">Kenya</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#booking">Contact</a></li>
+    <li><a href="https://wa.me/254740127111?text=Hi!%20I'd%20like%20to%20book%20a%20Vspa%20appointment" target="_blank" class="nav-book">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">Kenya's OG Waxing Experts</span>
+    </div>
+    <h1 class="hero-h1">
+      <span class="outline">Smooth</span>
+      <span class="bold">Skin.</span>
+      Confident<br>You.
+    </h1>
+    <p class="hero-desc">Waxing, Vajacials, Armcials, Facials, Massages, Sauna & Moroccan Bath. We exist to make you feel utterly, undeniably good in your own skin.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/254740127111?text=Hi!%20I'd%20like%20to%20book%20a%20Vspa%20appointment" target="_blank" class="btn-filled">Book on WhatsApp</a>
+      <span class="hero-scroll">Explore services</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">46K+</div>
+        <div class="stat-l">Instagram Family</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Cities in Kenya</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">#1</div>
+        <div class="stat-l">Waxing Spa in Kenya</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-a"></div>
+    <div class="hero-img-b">
+      <div class="hero-img-b1"></div>
+      <div class="hero-img-b2">
+        <div class="big">V</div>
+        <div class="small">Smooth since<br>day one</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    WAXING <span class="sep">✦</span> VAJACIAL <span class="sep">✦</span> ARMCIAL <span class="sep">✦</span> FACIAL <span class="sep">✦</span> MASSAGE <span class="sep">✦</span> SAUNA <span class="sep">✦</span> MOROCCAN BATH <span class="sep">✦</span> NAIROBI <span class="sep">✦</span> MOMBASA <span class="sep">✦</span> ELDORET <span class="sep">✦</span>
+    WAXING <span class="sep">✦</span> VAJACIAL <span class="sep">✦</span> ARMCIAL <span class="sep">✦</span> FACIAL <span class="sep">✦</span> MASSAGE <span class="sep">✦</span> SAUNA <span class="sep">✦</span> MOROCCAN BATH <span class="sep">✦</span> NAIROBI <span class="sep">✦</span> MOMBASA <span class="sep">✦</span> ELDORET <span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div>
+      <div class="sec-kicker">Our Services</div>
+      <h2 class="sec-h2">Everything Your<br>Skin <em>Deserves</em></h2>
+    </div>
+    <div>
+      <p class="sec-body">From our iconic waxing treatments to full-body pampering. Hover over any service to discover more — book in seconds via WhatsApp.</p>
+      <a href="https://wa.me/254740127111" target="_blank" class="btn-filled" style="margin-top:2rem;">Book a Session</a>
+    </div>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc wide">
+      <div class="svc-n">01</div>
+      <span class="svc-emoji">🪒</span>
+      <div class="svc-title">Waxing</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">Brazilian, bikini, underarm, legs, arms, face & full body. Kenya's most trusted wax. Clean, precise, long-lasting results — every single time.</p>
+    </div>
+    <div class="svc wider">
+      <div class="svc-n">02</div>
+      <span class="svc-emoji">✨</span>
+      <div class="svc-title">Vajacial</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">A full facial for your most intimate area. Deep cleanse, exfoliation, ingrown extraction, brightening mask and targeted serum. Targets dark spots, hyperpigmentation and post-wax skin — leaving you smooth, even and confident.</p>
+    </div>
+    <div class="svc wide">
+      <div class="svc-n">03</div>
+      <span class="svc-emoji">💪</span>
+      <div class="svc-title">Armcial</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">Our signature underarm facial — exfoliation, deep cleanse and brightening treatment. Tackles dark spots, ingrowns and rough texture for smooth, confident underarms.</p>
+    </div>
+    <div class="svc wide">
+      <div class="svc-n">04</div>
+      <span class="svc-emoji">🌿</span>
+      <div class="svc-title">Facials</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">Customised facial treatments for all skin types. Deep cleanse, extractions, hydration and brightening. Walk in dull, walk out glowing.</p>
+    </div>
+    <div class="svc wide">
+      <div class="svc-n">05</div>
+      <span class="svc-emoji">💆</span>
+      <div class="svc-title">Massages</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">Full body, back, Swedish and deep tissue. Release tension, improve circulation and treat yourself to the relaxation you've earned.</p>
+    </div>
+    <div class="svc wider">
+      <div class="svc-n">06</div>
+      <span class="svc-emoji">🧖</span>
+      <div class="svc-title">Sauna + Moroccan Bath</div>
+      <div class="svc-line"></div>
+      <p class="svc-desc">The Moroccan bath deeply exfoliates and hydrates your skin, leaving you brighter and glowy all over. Pair with a sauna session for the ultimate full-body detox and reset.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip" id="about">
+  <div class="about-quote">
+    "The first spa in Kenya built entirely around <span>you</span> — and what truly matters to you."
+  </div>
+  <div class="about-right">
+    <div class="about-label">Who We Are</div>
+    <p class="about-body">We believe in self-love, self-care and embracing your femininity — unapologetically. Since we opened our doors, Vspa has been the safe space for women in Kenya to come, be cared for and leave feeling extraordinary. Our therapists are trained, our products are carefully selected, and our standards are non-negotiable.</p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-title">Expert Therapists</div>
+        <p class="pillar-desc">Trained specialists with years of experience in intimate skincare.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Premium Products</div>
+        <p class="pillar-desc">Carefully selected, skin-safe products suited for all skin types.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Strict Hygiene</div>
+        <p class="pillar-desc">Single-use applicators and sterilised equipment. Every visit, no exceptions.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Your Comfort First</div>
+        <p class="pillar-desc">A private, calm and non-judgmental space where you can fully relax.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="section-header">
+    <div>
+      <div class="sec-kicker">Find Us</div>
+      <h2 class="sec-h2">We're In<br><em>Your City</em></h2>
+    </div>
+    <p class="sec-body">Three fully equipped locations across Kenya. Same training, same standards, same Vspa experience — wherever you are.</p>
+  </div>
+
+  <div class="loc-grid">
+    <div class="loc">
+      <div class="loc-num">01</div>
+      <span class="loc-tag">Open Mon–Sat</span>
+      <div class="loc-city">Nairobi</div>
+      <p class="loc-addr">Rm 7, 4th Floor, Kai Plaza<br>Tom Mboya Street, CBD<br>Nairobi, Kenya</p>
+      <a href="tel:+254740127111" class="loc-tel">+254 740 127 111</a>
+    </div>
+    <div class="loc">
+      <div class="loc-num">02</div>
+      <span class="loc-tag">Open Mon–Sat</span>
+      <div class="loc-city">Mombasa</div>
+      <p class="loc-addr">Mombasa Branch<br>Mombasa, Kenya<br>Call for exact directions</p>
+      <a href="tel:+254740127111" class="loc-tel">+254 740 127 111</a>
+    </div>
+    <div class="loc">
+      <div class="loc-num">03</div>
+      <span class="loc-tag">Open Mon–Sat</span>
+      <div class="loc-city">Eldoret</div>
+      <p class="loc-addr">Eldoret Branch<br>Eldoret, Kenya<br>Call for exact directions</p>
+      <a href="tel:+254740127111" class="loc-tel">+254 740 127 111</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div>
+    <div class="sec-kicker">Book a Session</div>
+    <h2 class="sec-h2">Ready to Feel<br><em>Incredible?</em></h2>
+    <p class="sec-body" style="margin-top:1rem;">The easiest way to book is via WhatsApp. Message us your name, preferred service and location — we'll confirm your slot in minutes.</p>
+    <p class="sec-body" style="margin-top:0.5rem;">Open Monday to Saturday, 8am – 5pm.</p>
+    <div class="contact-list">
+      <div class="c-item">
+        <div class="c-icon-box">📞</div>
+        <div>
+          <div class="c-label">Call or WhatsApp</div>
+          <div class="c-value"><a href="tel:+254740127111">+254 740 127 111</a></div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon-box">✉️</div>
+        <div>
+          <div class="c-label">Email</div>
+          <div class="c-value"><a href="mailto:info@thevspa.co.ke">info@thevspa.co.ke</a></div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon-box">📍</div>
+        <div>
+          <div class="c-label">Cities</div>
+          <div class="c-value">Nairobi · Mombasa · Eldoret</div>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+      <a href="https://instagram.com/vspakenya" target="_blank" class="soc-box">📸</a>
+      <a href="https://www.facebook.com/p/Vspakenya-100086994140203" target="_blank" class="soc-box">👥</a>
+      <a href="https://wa.me/254740127111" target="_blank" class="soc-box">💬</a>
+      <a href="https://tiktok.com/@vspakenya" target="_blank" class="soc-box">🎵</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="f-row">
+      <div class="f-group">
+        <label class="f-label">Your Name</label>
+        <input type="text" class="f-input" placeholder="Full name">
+      </div>
+      <div class="f-group">
+        <label class="f-label">Phone / WhatsApp</label>
+        <input type="tel" class="f-input" placeholder="+254 ...">
+      </div>
+    </div>
+    <div class="f-group">
+      <label class="f-label">Service</label>
+      <select class="f-select">
+        <option value="">Select a service</option>
+        <option>Waxing</option>
+        <option>Vajacial</option>
+        <option>Armcial</option>
+        <option>Facial</option>
+        <option>Massage</option>
+        <option>Sauna Session</option>
+        <option>Moroccan Bath</option>
+        <option>Sauna + Moroccan Bath Combo</option>
+      </select>
+    </div>
+    <div class="f-group">
+      <label class="f-label">Preferred Location</label>
+      <select class="f-select">
+        <option value="">Select location</option>
+        <option>Nairobi — Tom Mboya, Kai Plaza</option>
+        <option>Mombasa</option>
+        <option>Eldoret</option>
+      </select>
+    </div>
+    <div class="f-row">
+      <div class="f-group">
+        <label class="f-label">Preferred Date</label>
+        <input type="date" class="f-input">
+      </div>
+      <div class="f-group">
+        <label class="f-label">Preferred Time</label>
+        <select class="f-select">
+          <option value="">Select time</option>
+          <option>Morning (8am – 12pm)</option>
+          <option>Afternoon (12pm – 3pm)</option>
+          <option>Late afternoon (3pm – 5pm)</option>
+        </select>
+      </div>
+    </div>
+    <div class="f-group">
+      <label class="f-label">Notes</label>
+      <textarea class="f-textarea" placeholder="Any special requests or questions?"></textarea>
+    </div>
+    <button class="btn-filled" style="width:100%;padding:1.1rem;font-size:0.78rem;cursor:pointer;letter-spacing:0.2em;" onclick="window.open('https://wa.me/254740127111?text=Hi!%20I%27d%20like%20to%20book%20a%20Vspa%20appointment%20%E2%9C%A8','_blank')">Book on WhatsApp ✨</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-top">
+    <div>
+      <div class="f-brand-logo">
+        <span class="f-v">V</span>
+        <span class="f-spa-text">SPA Kenya</span>
+      </div>
+      <div class="f-motto">"Smooth skin. Confident you."</div>
+      <p class="f-desc-text">Kenya's #1 waxing and intimate skincare spa. Serving Nairobi, Mombasa and Eldoret. Open Monday – Saturday, 8am – 5pm.</p>
+    </div>
+    <div>
+      <div class="f-col-head">Services</div>
+      <ul class="f-col-links">
+        <li><a href="#services">Waxing</a></li>
+        <li><a href="#services">Vajacial</a></li>
+        <li><a href="#services">Armcial</a></li>
+        <li><a href="#services">Facials</a></li>
+        <li><a href="#services">Massages</a></li>
+        <li><a href="#services">Sauna & Moroccan Bath</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-head">Locations</div>
+      <ul class="f-col-links">
+        <li><a href="#locations">Nairobi — CBD</a></li>
+        <li><a href="#locations">Mombasa</a></li>
+        <li><a href="#locations">Eldoret</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-head">Contact</div>
+      <ul class="f-col-links">
+        <li><a href="tel:+254740127111">+254 740 127 111</a></li>
+        <li><a href="mailto:info@thevspa.co.ke">info@thevspa.co.ke</a></li>
+        <li><a href="https://instagram.com/vspakenya">@vspakenya</a></li>
+        <li><a href="https://thevspa.co.ke">thevspa.co.ke</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>© 2026 Vspa Kenya. All rights reserved.</span>
+    <span>Kenya's OG Waxing Experts · Nairobi · Mombasa · Eldoret</span>
+  </div>
+</footer>
+
+
+
+<style>
+  .wm-banner{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--black);border-bottom:2px solid var(--pink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0.65rem 2.5rem;font-family:'Montserrat',sans-serif;font-size:0.75rem;box-shadow:0 2px 20px rgba(232,0,90,0.25);}
+  .wm-left{display:flex;align-items:center;gap:0.75rem;}
+  .wm-lock{background:var(--pink);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;}
+  .wm-banner strong{color:var(--pink-mid);}
+  .wm-cta{background:var(--pink);color:#fff;padding:0.4rem 1.2rem;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
+  .wm-cta:hover{background:var(--pink-hot);}
+  nav{top:44px!important;}
+  .wm-layer{position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden;}
+  .wm-txt{position:absolute;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:rgba(232,0,90,0.09);white-space:nowrap;letter-spacing:0.1em;transform:rotate(-35deg);user-select:none;}
+  .wm-tab{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;z-index:10000;background:var(--pink);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.5rem 1.2rem;border:none;cursor:pointer;white-space:nowrap;}
+  .wm-foot{position:fixed;bottom:0;left:0;right:0;z-index:10000;background:rgba(13,13,13,0.93);backdrop-filter:blur(8px);border-top:1px solid rgba(232,0,90,0.25);color:rgba(255,255,255,0.45);font-family:'Montserrat',sans-serif;font-size:0.68rem;letter-spacing:0.08em;text-align:center;padding:0.5rem 1rem;}
+  .wm-foot a{color:var(--pink-mid);text-decoration:none;}
+  body{-webkit-user-select:none;-moz-user-select:none;user-select:none;}
+</style>
+
+<div class="wm-banner">
+  <div class="wm-left">
+    <div class="wm-lock">🔒</div>
+    <span>This is a <strong>DEMO PREVIEW</strong> — designed exclusively for Vspa Kenya. Not for redistribution.</span>
+  </div>
+  <a href="https://wa.me/254745882043?text=Hi!%20I%20saw%20the%20demo%20website%20you%20built%20for%20Vspa%20Kenya%20and%20I%27m%20interested%20in%20purchasing%20it%20%E2%9C%A8" target="_blank" class="wm-cta">Claim Your Site →</a>
+</div>
+
+<div class="wm-layer" id="wmL"></div>
+
+<button class="wm-tab" onclick="window.open('https://wa.me/254745882043?text=Hi!%20I%20saw%20the%20demo%20website%20you%20built%20for%20Vspa%20Kenya%20and%20I%27m%20interested%20in%20purchasing%20it%20%E2%9C%A8','_blank')">🔒 Demo Preview — Not Live</button>
+
+<div class="wm-foot">🔒 Protected Demo &nbsp;·&nbsp; To purchase: <a href="https://wa.me/254745882043?text=Hi!%20I%20saw%20the%20demo%20website%20you%20built%20for%20Vspa%20Kenya%20and%20I%27m%20interested%20in%20purchasing%20it%20%E2%9C%A8" target="_blank">WhatsApp +254 745 882 043</a></div>
+
+<script>
+(function(){
+  var l=document.getElementById('wmL');
+  var cols=Math.ceil(window.innerWidth/300)+2;
+  var rows=Math.ceil(window.innerHeight/160)+14;
+  for(var r=0;r<rows;r++){for(var c=0;c<cols;c++){var e=document.createElement('div');e.className='wm-txt';e.textContent='🔒 DEMO PREVIEW · NOT FOR REDISTRIBUTION';e.style.left=(c*320-80)+'px';e.style.top=(r*160-80)+'px';l.appendChild(e);}}
+})();
+document.addEventListener('contextmenu',function(e){e.preventDefault();});
+document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['s','u','p'].includes(e.key)){e.preventDefault();window.open('https://wa.me/254745882043?text=Hi!%20I%20saw%20the%20demo%20website%20you%20built%20for%20Vspa%20Kenya%20and%20I%27m%20interested%20in%20purchasing%20it%20%E2%9C%A8','_blank');}});
+</script>
+</body>
+</html>
